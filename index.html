@@ -17,32 +17,32 @@
     <div class="container">
 
         <div id="form" class="mt-2 mx-auto col col-lg-5 card p-1 text-center ">
-            <div class="card-header">
+            <div class="card-header bg-white">
                 <h1 class="card-title">Weather</h1>
             </div>
-            <img class="card-img-top m-2 mx-auto" style="width: 15rem;" src="assets/img/planeta-tierra.png">
+            <img class="card-img-top m-2 mx-auto img-fluid" style="width: 15rem;" src="assets/img/planeta-tierra.png">
             <hr>
             <div class="card-body">
                 <label for="" class="h3">City:</label>
                 <input id="city-input" type="text" class="form-control" placeholder="Enter a city">
-                <button class="btn btn-primary btn-block mt-2" onclick="consult()">Buscar</button>
+                <button class="btn btn-primary btn-block mt-2" onclick="consult()">Search</button>
             </div>
         </div>
 
 
         <div id="card" class="card mt-2 mx-auto col col-lg-5 text-center d-none" style="width: 30rem;">
-            <div class="card-header">
+            <div class="card-header bg-white">
                 <h1 id="day" class="card-title"></h1>
                 <p id="date" class="card-text text-muted">00/00/00</p>
             </div>
-            <img id="img" class="card-img-top m-2 mx-auto" style="width: 15rem;" src="" alt="">
+            <img id="img" class="card-img-top m-2 mx-auto img-fluid" style="width: 15rem;" src="" alt="">
             <hr>
             <div class="card-body">
-                <h2 class="card-title font-weight-bold"><span id="temp">-</span>°</h2>
+                <h2 class="card-title font-weight-bold"><span id="temp">-</span>°C</h2>
                 <p id="main" class="card-text h3"></p>
                 <!-- <p id="descripcion" class="card-text"></p> -->
                 <p id="city" class="card-text h4"></p>
-                <button class="btn btn-primary btn-block mt-2" onclick="back()">Regresar</button>
+                <button class="btn btn-primary btn-block mt-2" onclick="back()">Back</button>
             </div>
             
         </div>

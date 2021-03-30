@@ -14,14 +14,15 @@ function consult() {
             document.getElementById('day').innerHTML = getDay();
             const urlImg = `http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`;
             document.getElementById("img").src = urlImg;
-            document.getElementById('temp').innerHTML = json.main.temp;
+            document.getElementById('temp').innerHTML = tempConverter(json.main.temp).toFixed(1);
             document.getElementById('main').innerHTML = json.weather[0].main;
             /* document.getElementById('descripcion').innerHTML = json.weather[0].description; */
             document.getElementById('city').innerHTML = `${json.name},${json.sys.country}`;
             
         })
         .catch(error => {
-            
+            back();
+            window.alert('City no found');
         });
     }
     
@@ -47,8 +48,6 @@ function getDay() {
     return n;
 }
 
-function getDate() {
-    var date = new Date();
-    console.log(date);
-    return date;
-}
+function getDate() { return new Date(); }
+
+function tempConverter(temp) { return temp - 273.15; }
