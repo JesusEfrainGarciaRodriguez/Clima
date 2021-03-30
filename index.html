@@ -18,30 +18,31 @@
 
         <div id="form" class="mt-2 mx-auto col-6 card p-1 text-center ">
             <div class="card-header">
-                <h4 class="card-title">Clima</h4>
+                <h1 class="card-title">Weather</h1>
             </div>
             <img class="card-img-top m-2 mx-auto" style="width: 15rem;" src="assets/img/planeta-tierra.png">
             <hr>
             <div class="card-body">
-                <label for="">Ciudad:</label>
-                <input id="ciudad" type="text" class="form-control" placeholder="Ingrese una ciudad">
-                <button class="btn btn-primary btn-block mt-2" onclick="consultar()">Buscar</button>
+                <label for="" class="h3">City:</label>
+                <input id="city-input" type="text" class="form-control" placeholder="Enter a city">
+                <button class="btn btn-primary btn-block mt-2" onclick="consult()">Buscar</button>
             </div>
         </div>
 
 
-        <div id="card" class="card mt-2 mx-auto text-center d-none" style="width: 20rem;">
+        <div id="card" class="card mt-2 mx-auto text-center d-none" style="width: 30rem;">
             <div class="card-header">
-                <h4 class="card-title">Lunes</h4>
-                <p class="card-text">29/03/2021</p>
+                <h1 id="day" class="card-title"></h1>
+                <p id="date" class="card-text text-muted">00/00/00</p>
             </div>
-            <img class="card-img-top m-2 mx-auto" style="width: 15rem;" src="assets/img/Soleado.svg" alt="">
+            <img id="img" class="card-img-top m-2 mx-auto" style="width: 15rem;" src="" alt="">
             <hr>
             <div class="card-body">
-                <h5 class="card-title">24°</h5>
-                <p class="card-text">Soleado</p>
-                <p class="card-text">Mazatlán</p>
-                <button class="btn btn-primary btn-block mt-2" onclick="regresar()">Regresar</button>
+                <h2 class="card-title font-weight-bold"><span id="temp">-</span>°</h2>
+                <p id="main" class="card-text h3"></p>
+                <!-- <p id="descripcion" class="card-text"></p> -->
+                <p id="city" class="card-text h4"></p>
+                <button class="btn btn-primary btn-block mt-2" onclick="back()">Regresar</button>
             </div>
             
         </div>

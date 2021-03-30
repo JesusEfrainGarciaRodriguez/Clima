@@ -1,13 +1,24 @@
-function consultar() {
-    var ciudad = document.getElementById('ciudad');
+function consult() {
+    const ciudad = document.getElementById('city-input');
     if (ciudad.value.length){
-        console.log(ciudad.value);
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+ciudad.value+'&appid=12c49ef835196bec77edd6ef3fa8830c')
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad.value}&appid=12c49ef835196bec77edd6ef3fa8830c`)
         .then(response => response.json())
         .then(json => {
-            console.log(json);
+
+            //Ocultar form y aparecer card
             document.getElementById('form').classList.add('d-none');
             document.getElementById('card').classList.remove('d-none');
+
+            //Asignar valores a card
+            document.getElementById('date').innerHTML = getDate().toLocaleDateString();
+            document.getElementById('day').innerHTML = getDay();
+            const urlImg = `http://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`;
+            document.getElementById("img").src = urlImg;
+            document.getElementById('temp').innerHTML = json.main.temp;
+            document.getElementById('main').innerHTML = json.weather[0].main;
+            /* document.getElementById('descripcion').innerHTML = json.weather[0].description; */
+            document.getElementById('city').innerHTML = `${json.name},${json.sys.country}`;
+            
         })
         .catch(error => {
             
@@ -16,11 +27,28 @@ function consultar() {
     
 }
 
-function peticion(ciudad) {
-    
-}
-
-function regresar() {
+function back() {
     document.getElementById('card').classList.add('d-none');
     document.getElementById('form').classList.remove('d-none');
+}
+
+function getDay() {
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    /* var n = weekday[d.getDay()]; */
+    var n = weekday[getDate().getDay()];
+    return n;
+}
+
+function getDate() {
+    var date = new Date();
+    console.log(date);
+    return date;
 }
