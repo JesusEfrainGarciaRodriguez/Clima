@@ -11,18 +11,39 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-dark">
 
-    <div class="card text-white bg-dark mt-2" style="width: 18rem;">
-        <div class="card-header text-center">
-            <h4 class="card-title">Lunes</h4>
-            <p class="card-text">29/03/2021</p>
+
+    <div class="container">
+
+        <div id="form" class="mt-2 mx-auto col-6 card p-1 text-center ">
+            <div class="card-header">
+                <h4 class="card-title">Clima</h4>
+            </div>
+            <img class="card-img-top m-2 mx-auto" style="width: 15rem;" src="assets/img/planeta-tierra.png">
+            <hr>
+            <div class="card-body">
+                <label for="">Ciudad:</label>
+                <input id="ciudad" type="text" class="form-control" placeholder="Ingrese una ciudad">
+                <button class="btn btn-primary btn-block mt-2" onclick="consultar()">Buscar</button>
+            </div>
         </div>
-        <img class="card-img-top" src="assets/img/Soleado.svg" alt="">
-        <div class="card-body">
-            <h5 class="card-title">Mazatlan</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+
+
+        <div id="card" class="card mt-2 mx-auto text-center d-none" style="width: 20rem;">
+            <div class="card-header">
+                <h4 class="card-title">Lunes</h4>
+                <p class="card-text">29/03/2021</p>
+            </div>
+            <img class="card-img-top m-2 mx-auto" style="width: 15rem;" src="assets/img/Soleado.svg" alt="">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title">24°</h5>
+                <p class="card-text">Soleado</p>
+                <p class="card-text">Mazatlán</p>
+                <button class="btn btn-primary btn-block mt-2" onclick="regresar()">Regresar</button>
+            </div>
+            
         </div>
     </div>
 
@@ -37,6 +58,9 @@
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!--Local-->
+    <script src="js/index.js"></script>
 </body>
 
 </html>
